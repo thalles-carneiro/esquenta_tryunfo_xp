@@ -45,7 +45,7 @@ Crie um formulário que será utilizado para criar as cartas do seu baralho.
     - `cardType`, uma string;
     - `cardAbility`, uma string;
     - `cardPower`, um number;
-    - `cardToughness`, uma number;
+    - `cardToughness`, um number;
     - `cardImage`, uma string;
     - `cardRare`, uma string;
     - `isSaveButtonDisabled`, um boolean;
@@ -54,19 +54,19 @@ Crie um formulário que será utilizado para criar as cartas do seu baralho.
 
 As props do componente `Form` deverão ser utilizadas conforme o indicado abaixo:
 
-  * Campo `title-input`: a propriedade `value` deve receber o valor da prop `cardTitle` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `title-input`: a propriedade `value` deve receber o valor da prop `cardTitle` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `type-input`: a propriedade `value` deve receber o valor da prop `cardType` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `type-input`: a propriedade `value` deve receber o valor da prop `cardType` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `ability-input`: a propriedade `value` deve receber o valor da prop `cardAbility` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `ability-input`: a propriedade `value` deve receber o valor da prop `cardAbility` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `power-input`: a propriedade `value` deve receber o valor da prop `cardPower` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `power-input`: a propriedade `value` deve receber o valor da prop `cardPower` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `toughness-input`: a propriedade `value` deve receber o valor da prop `cardToughness` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `toughness-input`: a propriedade `value` deve receber o valor da prop `cardToughness` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `image-input`: a propriedade `value` deve receber o valor da prop `cardImage` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `image-input`: a propriedade `value` deve receber o valor da prop `cardImage` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
-  * Campo `rare-input`: a propriedade `value` deve receber o valor da prop `cardRare` e a prop `onChange` deve receber o valor da prop `onInputChange`.
+  * Campo `rare-input`: a propriedade `value` deve receber o valor da prop `cardRare` e a propriedade `onChange` deve receber o valor da prop `onInputChange`.
 
   * Botão `save-button`: a propriedade `disabled` deve receber o valor da prop `isSaveButtonDisabled` e a prop `onClick` deve receber o valor da prop `onSaveButtonClick`.
 
@@ -78,9 +78,9 @@ As props do componente `Form` deverão ser utilizadas conforme o indicado abaixo
 
   - Será validado se o campo de descrição recebe o valor da prop `cardAbility` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-  - Será validado se o campo do atributo 1 recebe o valor da prop `cardPower` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
+  - Será validado se o campo do poder recebe o valor da prop `cardPower` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
-  - Será validado se o campo do atributo 2 recebe o valor da prop `cardToughness` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
+  - Será validado se o campo da resistência recebe o valor da prop `cardToughness` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
   - Será validado se o campo de imagem recebe o valor da prop `cardImage` e se a callback `onInputChange` é chamada quando o campo sofre alguma alteração.
 
@@ -185,15 +185,13 @@ Veja como deve ser o funcionamento da aplicação:
 
   - Será validado se o botão `salvar` está desabilitado quando a página é renderizada pela primeira vez.
   - Será validado se o botão `salvar` está desabilitado se o campo título estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo tipo estiver vazio.
   - Será validado se o botão `salvar` está desabilitado se o campo imagem estiver vazio.
   - Será validado se o botão `salvar` está desabilitado se o campo habilidade estiver vazio.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for maior que 90.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for menor que 0.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for maior que 90.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for menor que 0.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for maior que 90.
-  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for menor que 0.
-  - Será validado se o botão `salvar` está desabilitado se a somatória dos campos de atributos for maior que 210.
+  - Será validado se o botão `salvar` está desabilitado se o campo do poder for maior que 10.
+  - Será validado se o botão `salvar` está desabilitado se o campo do poder for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se o campo da resistência for maior que 10.
+  - Será validado se o botão `salvar` está desabilitado se o campo da resistência for menor que 0.
   - Será validado se o botão `salvar` é habilitado ao preencher todos os campos do formulário corretamente.
 
 ---
@@ -203,16 +201,16 @@ Agora que o botão de salvar já está validado, você pode adicionar uma nova c
 **Dica:** você pode salvar cada carta em um formato de objeto e ter um _array_ com esses objetos no seu estado.
 
   * Ao clicar no botão que possui o atributo `data-testid="save-button"`, as informações que foram preenchidas no formulário deverão ser salvas no estado da sua aplicação.
-  
-  * Após salvar as informações, os `inputs` do formulário `Nome`, `Descrição` e `Imagem` e o conteúdo do preview da carta deverão ser limpos.
 
-  * Após salvar as informações, os três campos de atributos devem ter valor 0.
+  * Após salvar as informações, os `inputs` do formulário `Nome`, `Tipo`, `Descrição` e `Imagem` e o conteúdo do preview da carta deverão ser limpos.
 
-  * Após salvar as informações, o campo `Raridade` deve conter o valor `normal`.
+  * Após salvar as informações, os campos de poder e resistência devem ter valor 0.
+
+  * Após salvar as informações, o campo `Raridade` deve conter o valor `comum`.
 ### O que será verificado
 
-  - Será validado se os campos do formulário `Nome`, `Descrição` e `Imagem` são limpos após clicar em `salvar`.
+  - Será validado se os campos do formulário `Nome`, `Tipo`, `Descrição` e `Imagem` são limpos após clicar em `salvar`.
 
-  - Será validado se o os três campos de atributos tem o valor `0` após clicar em `salvar`.
+  - Será validado se o os campos de poder e resistência tem o valor `0` após clicar em `salvar`.
   
-  - Será validado se o campo de `Raridade` tem o valor `normal` após clicar em `salvar`.
+  - Será validado se o campo de `Raridade` tem o valor `comum` após clicar em `salvar`.

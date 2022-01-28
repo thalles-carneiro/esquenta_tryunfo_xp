@@ -4,51 +4,43 @@ import userEvent from '@testing-library/user-event'
 import App from '../App';
 
 describe("4 - Crie o preview da carta que está sendo criada pelo formulário", () => {
-  it("Será validado se é renderizado no preview da carta o valor digitado no input Nome do formulário", () => {
+  it("Será validado se é renderizado no preview da carta o valor digitado no input Título do formulário", () => {
     render(<App />);
-    const nameInput = screen.getByTestId(/name-input/i);
-    userEvent.type(nameInput, 'Carta 1 - Escavadeira Dupla');
-    const namePreview = screen.getByTestId('name-card');
-    expect(namePreview).toHaveTextContent('Carta 1 - Escavadeira Dupla');
+    const titleInput = screen.getByTestId(/title-input/i);
+    userEvent.type(titleInput, 'Arconte da Absolvição');
+    const titlePreview = screen.getByTestId('title-card');
+    expect(titlePreview).toHaveTextContent('Arconte da Absolvição');
+  });
+
+  it("Será validado se é renderizado no preview da carta o valor digitado no input Tipo do formulário", () => {
+    render(<App />);
+    const titleInput = screen.getByTestId(/type-input/i);
+    userEvent.type(titleInput, 'Criatura - Arconte');
+    const titlePreview = screen.getByTestId('type-card');
+    expect(titlePreview).toHaveTextContent('Criatura - Arconte');
   });
 
   it("Será validado se é renderizado no preview da carta o valor digitado no input Descrição do formulário", () => {
     render(<App />);
-    const descInput = screen.getByTestId(/description-input/i);
-    userEvent.type(descInput, 'Uma simples escavadeira');
-    const descPreview = screen.getByTestId('description-card');
-    expect(descPreview).toHaveTextContent('Uma simples escavadeira');
+    const abilityInput = screen.getByTestId(/ability-input/i);
+    userEvent.type(abilityInput, 'Voar');
+    const abilityPreview = screen.getByTestId('ability-card');
+    expect(abilityPreview).toHaveTextContent('Voar');
   });
 
-  it("Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 1 no formulário", () => {
+  it("Será validado se é renderizado no preview da carta o valor digitado no input referente ao poder no formulário", () => {
     render(<App />);
-    const attr1Input = screen.getByTestId(/attr1-input/i);
-    userEvent.type(attr1Input, '90');
-    const attr1Preview = screen.getByTestId(/attr1-card/i)
-    expect(attr1Preview).toHaveTextContent('90')
+    const powerInput = screen.getByTestId(/power-input/i);
+    userEvent.type(powerInput, 3);
+    const powerPreview = screen.getByTestId(/power-card/i)
+    expect(powerPreview).toHaveTextContent('3')
   });
 
-  it("Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 2 no formulário", () => {
+  it("Será validado se é renderizado no preview da carta o valor digitado no input referente à resistência no formulário", () => {
     render(<App />);
-    const attr2Input = screen.getByTestId(/attr2-input/i);
-    userEvent.type(attr2Input, '90');
-    const attr2Preview = screen.getByTestId(/attr2-card/i)
-    expect(attr2Preview).toHaveTextContent('90')
-  });
-
-  it("Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 3 no formulário", () => {
-    render(<App />);
-    const attr3Input = screen.getByTestId(/attr3-input/i);
-    userEvent.type(attr3Input, '30');
-    const attr3Preview = screen.getByTestId(/attr3-card/i)
-    expect(attr3Preview).toHaveTextContent('30')
-  });
-
-  it("Será validado se é renderizado no preview da carta o `data-testid='trunfo-card'` se o checkbox Super Trunfo for selecionado", () => {
-    render(<App />);
-    const trunfoInput = screen.getByTestId(/trunfo-input/i);
-    userEvent.click(trunfoInput);
-    const trunfoPreview = screen.getByTestId(/trunfo-card/i)
-    expect(trunfoPreview).toBeInTheDocument();
+    const toughnessInput = screen.getByTestId(/toughness-input/i);
+    userEvent.type(toughnessInput, 2);
+    const toughnessPreview = screen.getByTestId(/toughness-card/i)
+    expect(toughnessPreview).toHaveTextContent('2')
   });
 })
