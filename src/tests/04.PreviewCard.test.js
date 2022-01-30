@@ -31,7 +31,7 @@ describe("4 - Crie o preview da carta que está sendo criada pelo formulário", 
   it("Será validado se é renderizado no preview da carta o valor digitado no input referente ao poder no formulário", () => {
     render(<App />);
     const powerInput = screen.getByTestId(/power-input/i);
-    userEvent.type(powerInput, 3);
+    userEvent.type(powerInput, "3");
     const powerPreview = screen.getByTestId(/power-card/i)
     expect(powerPreview).toHaveTextContent('3')
   });
@@ -39,7 +39,7 @@ describe("4 - Crie o preview da carta que está sendo criada pelo formulário", 
   it("Será validado se é renderizado no preview da carta o valor digitado no input referente à resistência no formulário", () => {
     render(<App />);
     const toughnessInput = screen.getByTestId(/toughness-input/i);
-    userEvent.type(toughnessInput, 2);
+    userEvent.type(toughnessInput, "2");
     const toughnessPreview = screen.getByTestId(/toughness-card/i)
     expect(toughnessPreview).toHaveTextContent('2')
   });

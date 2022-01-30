@@ -19,8 +19,8 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(screen.getByTestId(/type-input/i), 'Lorem');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
     userEvent.type(screen.getByTestId(/ability-input/i), 'Lorem ipsum');
-    userEvent.type(screen.getByTestId(/power-input/i), 3);
-    userEvent.type(screen.getByTestId(/toughness-input/i), 2);
+    userEvent.type(screen.getByTestId(/power-input/i), "3");
+    userEvent.type(screen.getByTestId(/toughness-input/i), "2");
     userEvent.selectOptions(screen.getByTestId(/rare-input/i), 'raro');
     expect(saveBtn).not.toBeDisabled();
     
@@ -36,8 +36,8 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(screen.getByTestId(/type-input/i), 'Lorem');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
     userEvent.type(screen.getByTestId(/ability-input/i), 'Lorem ipsum');
-    userEvent.type(screen.getByTestId(/power-input/i), 3);
-    userEvent.type(screen.getByTestId(/toughness-input/i), 2);
+    userEvent.type(screen.getByTestId(/power-input/i), "3");
+    userEvent.type(screen.getByTestId(/toughness-input/i), "2");
     userEvent.selectOptions(screen.getByTestId(/rare-input/i), 'raro');
     expect(saveBtn).not.toBeDisabled();
 
@@ -53,8 +53,8 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(screen.getByTestId(/type-input/i), 'Lorem');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
     userEvent.type(screen.getByTestId(/ability-input/i), 'Lorem ipsum');
-    userEvent.type(screen.getByTestId(/power-input/i), 3);
-    userEvent.type(screen.getByTestId(/toughness-input/i), 2);
+    userEvent.type(screen.getByTestId(/power-input/i), "3");
+    userEvent.type(screen.getByTestId(/toughness-input/i), "2");
     userEvent.selectOptions(screen.getByTestId(/rare-input/i), 'raro');
     expect(saveBtn).not.toBeDisabled();
     
@@ -70,8 +70,8 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(screen.getByTestId(/type-input/i), 'Lorem');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
     userEvent.type(screen.getByTestId(/ability-input/i), 'Lorem ipsum');
-    userEvent.type(screen.getByTestId(/power-input/i), 3);
-    userEvent.type(screen.getByTestId(/toughness-input/i), 2);
+    userEvent.type(screen.getByTestId(/power-input/i), "3");
+    userEvent.type(screen.getByTestId(/toughness-input/i), "2");
     userEvent.selectOptions(screen.getByTestId(/rare-input/i), 'raro');
     expect(saveBtn).not.toBeDisabled();
 
@@ -95,13 +95,13 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     expect(saveBtn).not.toBeDisabled();
 
     userEvent.clear(powerInput);
-    userEvent.type(powerInput, 100);
+    userEvent.type(powerInput, "100");
     expect(saveBtn).toBeDisabled();
   });
 
@@ -120,13 +120,13 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     expect(saveBtn).not.toBeDisabled();
 
     userEvent.clear(powerInput);
-    userEvent.type(powerInput, -1);
+    userEvent.type(powerInput, "-1");
     expect(saveBtn).toBeDisabled();
   });
 
@@ -145,13 +145,13 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     expect(saveBtn).not.toBeDisabled();
 
     userEvent.clear(toughnessInput);
-    userEvent.type(toughnessInput, 100);
+    userEvent.type(toughnessInput, "100");
     expect(saveBtn).toBeDisabled();
   });
 
@@ -170,13 +170,13 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     expect(saveBtn).not.toBeDisabled();
 
     userEvent.clear(toughnessInput);
-    userEvent.type(toughnessInput, -1);
+    userEvent.type(toughnessInput, "-1");
     expect(saveBtn).toBeDisabled();
   });
 
@@ -198,8 +198,8 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     expect(saveBtn).not.toBeDisabled();
   });

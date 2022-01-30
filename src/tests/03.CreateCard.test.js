@@ -6,8 +6,8 @@ const defaultProps = {
   cardTitle: "Título da carta",
   cardType: "Tipo da carta",
   cardAbility: "Habilidade da carta",
-  cardPower: 5,
-  cardToughness: 6,
+  cardPower: "5",
+  cardToughness: "6",
   cardImage: "url-to-image",
   cardRare: "incomum",
 }

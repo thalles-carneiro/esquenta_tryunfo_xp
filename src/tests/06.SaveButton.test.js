@@ -19,8 +19,8 @@ describe("6 - Crie a função do botão salvar", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
 
     expect(saveBtn).toBeEnabled();
@@ -46,8 +46,8 @@ describe("6 - Crie a função do botão salvar", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
     
     expect(saveBtn).toBeEnabled();
@@ -72,8 +72,8 @@ describe("6 - Crie a função do botão salvar", () => {
     userEvent.type(typeInput, 'Tryber');
     userEvent.type(abilityInput, 'Ensinar da melhor forma possível as pessoas estudantes');
     userEvent.type(imageInput, 'url-to-image');
-    userEvent.type(powerInput, 10);
-    userEvent.type(toughnessInput, 10);
+    userEvent.type(powerInput, "10");
+    userEvent.type(toughnessInput, "10");
     userEvent.selectOptions(selectInput, "raro");
 
     expect(saveBtn).toBeEnabled();
