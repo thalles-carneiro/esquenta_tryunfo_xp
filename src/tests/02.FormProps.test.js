@@ -7,8 +7,8 @@ const defaultProps = {
   cardTitle: "Título da carta",
   cardType: "Tipo da carta",
   cardAbility: "Habilidade da carta",
-  cardPower: 5,
-  cardToughness: 6,
+  cardPower: "5",
+  cardToughness: "6",
   cardImage: "url-to-image",
   cardRare: "incomum",
   isSaveButtonDisabled: false,
@@ -57,7 +57,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
 
     expect(input).toHaveValue(5);
     
-    userEvent.type(input, 7);
+    userEvent.type(input, "7");
     expect(onInputChange).toHaveBeenCalled();
   });
 
@@ -68,7 +68,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
 
     expect(input).toHaveValue(6);
     
-    userEvent.type(input, 8);
+    userEvent.type(input, "8");
     expect(onInputChange).toHaveBeenCalled();
   });
 
@@ -90,7 +90,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
 
     expect(input).toHaveValue("incomum");
     
-    userEvent.selectOptions(input, "muito incomum");
+    userEvent.selectOptions(input, "incomum");
     expect(onInputChange).toHaveBeenCalled();
   });
 
